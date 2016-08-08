@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <body ng-app="app">
+        <a href="#/">HOME</a>
+        <a href="#/div1">DIV1</a>
+        <a href="#/div2">DIV2</a>
+        <a href="#/div3">DIV3</a>
+
+        <div ng-view>
+            <!--Here's where everything appears-->
+        </div>
+
+    </body>
+    <script src="js/controllers.js"></script>
+</html>
