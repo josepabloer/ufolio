@@ -1,4 +1,14 @@
 
-var div1Controller = angular.module('app').controller('div1Controller', function ($scope) {
-    $scope.variableDiv1 = 'this is a div1 variable';
+var div1Controller = angular.module('app').controller('div1Controller', function ($scope, $http) {
+
+    var onUserComplete = function(response){
+        $scope.user = response.data;
+    };
+
+    var onError = function(reason){
+        $scope.error = reason;
+    };
+
+    $http.get("https://api.github.com/users/robconery")
+        .then(onUserComplete, onError);
 });
