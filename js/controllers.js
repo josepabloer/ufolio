@@ -1,7 +1,8 @@
 'use strict';
 
-var app = angular.module("app", ['ngRoute']);
+var backendURL = 'http://default-environment.mqcicakiqj.us-west-2.elasticbeanstalk.com';
 
+var app = angular.module("app", ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
         .when('/',{
@@ -31,17 +32,29 @@ app.config(function($routeProvider) {
         .otherwise('/');
 });
 
-var homeController = angular.module('app').controller('homeController', function ($scope) {
-    $scope.variableHome = 'this is a home variable';
+var homeController = angular.module('app').controller('homeController', function ($scope, $http) {
+    $http.get('http://default-environment.mqcicakiqj.us-west-2.elasticbeanstalk.com/usuario/listar')
+        .then(function onUsersComplete(response){
+            $scope.users = response.data;
+        }, function onError(reason){
+            $scope.error = reason;
+        });
+
+
+    $http({
+        method: 'GET',
+        url: 'http://default-environment.mqcicakiqj.us-west-2.elasticbeanstalk.com/usuario/listar',
+        headers: {'Content-Type': 'application/json'}
+    }).then(function successCallback(response) {
+        $scope.users = response.data;
+    }, function errorCallback(reason) {
+        $scope.error = reason;
+    });
 });
 
-var div1Controller = angular.module('app').controller('div1Controller', function ($scope, $http) {
-    var onUserComplete = function(response){
-        $scope.user = response.data;
-    };
+var div1Controller = angular.module('app').controller('div1Controller', function ($scope) {
 
-    $http.get("https://api.github.com/users/robconery")
-        .then(onUserComplete);
+
 });
 
 var div2Controller = angular.module('app').controller('div2Controller', function ($scope) {

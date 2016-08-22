@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
-    <body ng-app="app">
-        <a href="#/">HOME</a>
-        <a href="#/div1">DIV1</a>
-        <a href="#/div2">DIV2</a>
-        <a href="#/div3">DIV3</a>
-
-        <div ng-view>
-            <!--Here's where everything appears-->
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<body ng-app="app">
+<div class="container-fluid top-bar-container">
+    <h1 class="logo">Ufolio</h1>
+    <div class="on-right">
+        <button class="the-button green-bg">Add portfolio item</button>
+        <button class="the-button blue-bg">Login!</button>
+    </div>
+</div>
+<div class="container-fluid secondary-bar-container">
+    <div class="nav">
+        <div class="nav-item"><i aria-hidden="true" class="fa fa-home"></i><a>Home</a></div>
+        <div class="nav-item"><i aria-hidden="true" class="fa fa-user"></i><a>Account</a></div>
+    </div>
+</div>
+<div class="container-fluid user-bg"></div>
+<div class="user-intro">
+    <div class="user-portrait"><img src="http://www.gratisography.com/pictures/303_1.jpg"/></div>
+</div>
+<div class="content-container top-adjustment">
+    <div class="user-info">
+        <p class="name lead">Emma</p>
+        <div class="bg-wrapper">
+            <p>Photographer</p>
+            <div class="bg-opacity"></div>
         </div>
-
-    </body>
-    <script src="js/controllers.js"></script>
+        <div class="bg-wrapper">
+            <p>emma@gmail.com</p>
+            <div class="bg-opacity"></div>
+        </div>
+    </div>
+</div>
+<div ng-view>
+    <!--Here's where everything appears-->
+</div>
+<footer>
+    <div class="footer-items">
+        <p>Ufolio the best place to share your work.</p>
+    </div>
+</footer>
+</body>
+<script src="js/controllers.js"></script>
 </html>

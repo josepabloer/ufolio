@@ -1,7 +1,8 @@
 'use strict';
 
-var app = angular.module("app", ['ngRoute']);
+var backendURL = 'http://default-environment.mqcicakiqj.us-west-2.elasticbeanstalk.com';
 
+var app = angular.module("app", ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
         .when('/',{
