@@ -1,0 +1,197 @@
+.top-bar-container {
+  background: #dc6900;
+  min-heignt: 100px;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+.secondary-bar-container {
+  background: #eb8c00;
+  min-heignt: 60px;
+  height: 60px;
+  width: 100%; }
+
+.nav {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .nav .nav-item {
+    color: #fff; }
+    .nav .nav-item:hover {
+      color: #777; }
+    .nav .nav-item i {
+      margin-right: 2px; }
+    .nav .nav-item a {
+      margin-right: 10px;
+      color: inherit;
+      cursor: pointer;
+      text-decoration: none; }
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  text-shadow: 2px 0px 1px #969696;
+  margin: 0; }
+  .logo:hover {
+    opacity: 0.5;
+    cursor: pointer; }
+
+.the-button {
+  padding: 10px;
+  border-radius: 17.5px;
+  border: none;
+  color: #fff;
+  font-weight: bold; }
+  .the-button:hover {
+    opacity: 0.5; }
+
+.green-bg {
+  background: #74d600; }
+
+.blue-bg {
+  background: #011f4b; }
+
+.user-bg {
+  height: 250px;
+  background-image: url("http://www.gratisography.com/pictures/302_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.user-intro {
+  position: relative; }
+
+.user-portrait {
+  height: 175px;
+  background: #eee;
+  width: 175px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -87.5px;
+  top: -87.5px;
+  overflow: hidden; }
+  .user-portrait img {
+    height: inherit; }
+
+.top-adjustment {
+  padding-top: 100px; }
+
+.content-container {
+  height: auto;
+  width: 100%;
+  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/giftly.png"); }
+
+.user-info p {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  color: #777;
+  font-weight: bolder;
+  z-index: 9999; }
+
+.user-info .name {
+  font-family: 'Pacifico', cursive;
+  color: #eb8c00;
+  letter-spacing: 2.5px;
+  text-shadow: 1px 0px 1px #969696;
+  margin: 0;
+  font-size: 34px; }
+
+.bg-wrapper {
+  position: relative;
+  margin-bottom: 7.5px; }
+
+.bg-opacity {
+  z-index: 0;
+  background: #fff;
+  height: 30px;
+  width: 100%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0; }
+
+.user-page .cards-container {
+  padding: 2.5% 0;
+  column-count: 3;
+  column-gap: 1em; }
+
+.card {
+  height: 200px;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0 0 1em;
+  break-inside: avoid;
+  display: inline-block;
+  box-sizing: border-box; }
+
+.card-medium {
+  height: 300px; }
+
+.card-large {
+  height: 400px; }
+
+.card-full-view {
+  width: 100%;
+  min-height: 500px;
+  background: #eb8c00;
+  margin-top: 1em;
+  border-radius: 10px; }
+  .card-full-view .title-card {
+    background: #fff;
+    color: #777;
+    padding: 10px;
+    border: 1px solid #dedede;
+    border-radius: 10px 10px 0 0; }
+    .card-full-view .title-card h6 {
+      font-size: 15px; }
+  .card-full-view .content-card {
+    width: 100%;
+    min-height: 350px;
+    overflow: hidden; }
+    .card-full-view .content-card img {
+      height: auto;
+      width: 100%; }
+    .card-full-view .content-card .description {
+      padding: 10px;
+      height: auto;
+      background: #fff; }
+    .card-full-view .content-card .footer-card {
+      border-top: 1px solid #dedede;
+      padding: 10px;
+      color: #777; }
+      .card-full-view .content-card .footer-card span {
+        font-size: 13px;
+        color: #fff; }
+
+.card-actions {
+  display: inline-block;
+  float: right; }
+  .card-actions i {
+    margin-right: 10px; }
+    .card-actions i:hover {
+      cursor: pointer; }
+  .card-actions i.fa-heart:hover {
+    color: #d80036; }
+  .card-actions i.fa-facebook:hover {
+    color: #3b5998; }
+  .card-actions i.fa-twitter:hover {
+    color: #55ACEE; }
+
+footer {
+  background: #dedede; }
+
+.footer-items {
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around; }
+  .footer-items p {
+    padding: 5px;
+    font-family: 'Pacifico', cursive;
+    color: #000; }

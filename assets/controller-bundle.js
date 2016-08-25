@@ -1,22 +1,30 @@
-app.controller('homeController', 
-function ($scope, UsuarioService) {
+'use strict';
 
-    $scope.listarUsuario = function() {
-		UsuarioService.listar(function(response){
-			console.log(response);
-		});
-	}
+app.controller('homeController',
+    function ($scope, UsuarioService, sharedProperties) {
 
-	$scope.buscarUsuario = function(){
-		var userid = 1; //Ejemplo
-		UsuarioService.buscar(userid, function(response){
-			console.log(response);
-		});
-	}
-});
-var div1Controller = angular.module('app').controller('div1Controller', function ($scope) {
-    $scope.variableDiv1 = 'this is a div1 variable';
-});
+        $scope.listarUsuarios = function () {
+            UsuarioService.listarUsuarios(function (response) {
+                $scope.userList = response;
+            });
+        }
+
+        $scope.changeSearchedUser = function (userId){
+            sharedProperties.setSearchedUser(userId);
+        }
+    }
+);
+
+app.controller('userProfileController',
+    function ($scope, UsuarioService, sharedProperties) {
+
+        $scope.buscarUsuario = function () {
+            UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
+                $scope.user = response;
+            });
+        }
+    }
+);
 
 var div2Controller = angular.module('app').controller('div2Controller', function ($scope) {
     $scope.variableDiv2 = 'this is a div2 variable';

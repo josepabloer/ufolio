@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
         })
         .when('/userProfile',{
             controller: 'userProfileController',
-            controllerAs: 'div1',
+            controllerAs: 'userProfile',
             templateUrl: 'Views/userProfile.html',
             caseInsensitiveMatch: true
         })

@@ -6,7 +6,8 @@ var  controllersList = [
 ];
 
 var  servicesList = [
-  'js/services/UsuarioService.js'
+  'js/services/UsuarioService.js',
+  'js/services/sharedProperties.js'
 ];
 
 var gulp = require('gulp');
@@ -24,7 +25,6 @@ gulp.task('concatServices', function() {
     .pipe(concat('service-bundle.js'))
     .pipe(gulp.dest('assets/'));
 });
-gulp.task('concat', ['concatControllers', 'concatServices']);
 
 var uglify = require('gulp-uglify');
 gulp.task('uglifyControllers', function() {
@@ -38,9 +38,12 @@ var sass = require('gulp-sass');
 gulp.task('sass', function () {
   return gulp.src('sass/styles.sass')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./assets/css'));
+    .pipe(gulp.dest('./assets/'));
 });
 
 gulp.task('default', function(){
      gulp.watch('js/**/*.js',['concat']);
 });
+
+gulp.task('concat', ['concatControllers', 'concatServices', 'sass']);
+

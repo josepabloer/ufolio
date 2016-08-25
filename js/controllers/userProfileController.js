@@ -1,3 +1,11 @@
-var div1Controller = angular.module('app').controller('div1Controller', function ($scope) {
-    $scope.variableDiv1 = 'this is a div1 variable';
-});
+
+app.controller('userProfileController',
+    function ($scope, UsuarioService, sharedProperties) {
+
+        $scope.buscarUsuario = function () {
+            UsuarioService.buscarUsuario(sharedProperties.getSearchedUser(), function (response) {
+                $scope.user = response;
+            });
+        }
+    }
+);

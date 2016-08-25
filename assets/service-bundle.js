@@ -1,22 +1,42 @@
-app.service('UsuarioService', function($http, URLS){
 
-	this.listar = function(callback){
-		$http.get(URLS.usuario.listar)
-		.then(function(response){
-			if(response.data && response.data.valido) return callback(response.data);
-		});
-	}
+app.service('UsuarioService', function ($http, URLS) {
 
-	this.buscar = function(id ,callback){
+    this.listarUsuarios = function (callback) {
+        $http.get(URLS.backendURL + URLS.usuario.listarUsuarios)
+            .then(function (response) {
+                if (response.data && response.data.valido) {
+                    return callback(response.data);}
+            });
+    }
 
-		$http.get(URLS.usuario.buscar + id)
-		.then(function(response){
-			if(response.data && response.data.valido) return callback(response.data);
-		});
-		
-	}
+    this.buscarUsuario = function (id, callback) {
+        $http.get(URLS.backendURL + URLS.usuario.buscar + id)
+            .then(function (response) {
+                if (response.data && response.data.valido) {
+                    return callback(response.data);
+                }
+            });
+    }
 
-	this.registrar = function(data, callback){
-		//
-	}
+    this.registrar = function (data, callback) {
+        $http.post(URLS.backendURL + URLS.usuario.registrar)
+            .then(function (response) {
+                if (response.data && response.data.valido) {
+                    return callback(response.data);
+                }
+            });
+    }
+});
+
+app.service('sharedProperties', function () {
+
+    this.searchedUser = '';
+    return {
+        getSearchedUser: function () {
+            return searchedUser;
+        },
+        setSearchedUser: function(userId) {
+            searchedUser = userId;
+        }
+    };
 });

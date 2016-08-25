@@ -1,16 +1,16 @@
-app.controller('homeController', 
-function ($scope, UsuarioService) {
+'use strict';
 
-    $scope.listarUsuario = function() {
-		UsuarioService.listar(function(response){
-			console.log(response);
-		});
-	}
+app.controller('homeController',
+    function ($scope, UsuarioService, sharedProperties) {
 
-	$scope.buscarUsuario = function(){
-		var userid = 1; //Ejemplo
-		UsuarioService.buscar(userid, function(response){
-			console.log(response);
-		});
-	}
-});
+        $scope.listarUsuarios = function () {
+            UsuarioService.listarUsuarios(function (response) {
+                $scope.userList = response;
+            });
+        }
+
+        $scope.changeSearchedUser = function (userId){
+            sharedProperties.setSearchedUser(userId);
+        }
+    }
+);

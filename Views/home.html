@@ -1,6 +1,31 @@
-<div ng-controller="homeController">
-    {{variableHome}}
-    <button ng-click="listarUsuario()">Listar</button>
-    <button ng-click="buscarUsuario()">Buscar</button>
-
+<div ng-controller="homeController" ng-init="listarUsuarios()">
+    <div ng-repeat="user in userList.users">
+        <a href="#/userProfile" ng-click="changeSearchedUser(user.id)">Go to profile</a>
+        <p>Id: {{user.id}}</p>
+        <p>Nombre: {{user.nombre}}</p>
+        <p>Apellidos: {{user.apellidos}}</p>
+        <p>Facultad: {{user.facultad}}</p>
+        <p>Carrera: {{user.carrera}}</p>
+        <p>Correo: {{user.correo}}</p>
+        <p>Contrasena: {{user.contrasena}}</p>
+        <p>Foto: {{user.foto}}</p>
+        <p>Acerca: {{user.acerca}}</p>
+        <p>experiencia: {{user.experiencia}}</p>
+        <p>telefono: {{user.telefono}}</p>
+        <p>Intereses</p>
+        <ul>
+            <li ng-repeat="interes in user.intereses">
+                {{interes}}
+            </li>
+        </ul>
+        <p>Proyectos</p>
+        <ul>
+            <li ng-repeat="proyecto in user.proyectos">
+                <p>Id: {{proyecto.id}}</p>
+                <p>Usuario Id: {{proyecto.usuario_id}}</p>
+                <p>File: {{proyecto.file}}</p>
+                <p>Icon: {{proyecto.icon}}</p>
+            </li>
+        </ul>
+        </div>
 </div>
