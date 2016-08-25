@@ -10,10 +10,10 @@ app.config(function($routeProvider) {
             templateUrl: 'Views/home.html',
             caseInsensitiveMatch: true
         })
-        .when('/div1',{
-            controller: 'div1Controller',
+        .when('/userProfile',{
+            controller: 'userProfileController',
             controllerAs: 'div1',
-            templateUrl: 'Views/div1.html',
+            templateUrl: 'Views/userProfile.html',
             caseInsensitiveMatch: true
         })
         .when('/div2',{
