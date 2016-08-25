@@ -38,7 +38,7 @@ var sass = require('gulp-sass');
 gulp.task('sass', function () {
   return gulp.src('sass/styles.sass')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./assets/css'));
 });
 
 gulp.task('default', function(){

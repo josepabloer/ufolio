@@ -1,16 +1,19 @@
 app.controller('homeController', 
 function ($scope, UsuarioService) {
-    $scope.variableHome = 'this is a home variable';
 
-    $scope.listarUsuario = function()
-	{
+    $scope.listarUsuario = function() {
 		UsuarioService.listar(function(response){
 			console.log(response);
 		});
 	}
 
+	$scope.buscarUsuario = function(){
+		var userid = 1; //Ejemplo
+		UsuarioService.buscar(userid, function(response){
+			console.log(response);
+		});
+	}
 });
-
 var div1Controller = angular.module('app').controller('div1Controller', function ($scope) {
     $scope.variableDiv1 = 'this is a div1 variable';
 });
